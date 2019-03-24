@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="用Kodi折腾地愉快地看剧看电影。">
+<meta name="keywords" content="kodi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何使用Kodi">
+<meta property="og:url" content="https://itxia.github.io/2018/10/07/HowToUseKodi/index.html">
+<meta property="og:site_name" content="itxia&#39;s blog">
+<meta property="og:description" content="用Kodi折腾地愉快地看剧看电影。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/webkodi.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/storekodi.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/1.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/2.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/3.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/4.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/5.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/6.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/7.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/8.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/9.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/10.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/11.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/12.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/13.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/14.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/15.png">
+<meta property="og:image" content="https://itxia.github.io/figure/kodi/16.png">
+<meta property="og:updated_time" content="2018-12-24T12:27:41.703Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何使用Kodi">
+<meta name="twitter:description" content="用Kodi折腾地愉快地看剧看电影。">
+<meta name="twitter:image" content="https://itxia.github.io/figure/kodi/webkodi.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://itxia.github.io/2018/10/07/HowToUseKodi/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>如何使用Kodi | itxia's blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">itxia's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Share With You</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://itxia.github.io/2018/10/07/HowToUseKodi/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="itxia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="itxia's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">如何使用Kodi
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-07 21:20:35" itemprop="dateCreated datePublished" datetime="2018-10-07T21:20:35+08:00">2018-10-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-24 20:27:41" itemprop="dateModified" datetime="2018-12-24T20:27:41+08:00">2018-12-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/人生经验/" itemprop="url" rel="index"><span itemprop="name">人生经验</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>用Kodi<del>折腾地</del>愉快地看剧看电影。</p>
+<a id="more"></a>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Kodi，说得简单点就是一个视频播放器。我认为的与众不同之处就是它可以用来看ftp和服务器上的视频，这样我就不用下载到本地电脑，节省了硬盘空间。<del>不是所有人都有服务器的</del>，这种用法不常见。</p>
+<h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><p>Windows用户可以直接在<code>Microsoft Store</code>上搜索<code>Kodi</code>下载安装。不过不知道什么原因，我的电脑上直接搜索是搜不到的。于是我们来到<a href="https://kodi.tv/download" target="_blank" rel="noopener">Kodi的官网</a>，选择Windows，这时出现了如图所示的画面：<br><img src="/figure/kodi/webkodi.png" alt="fig0-1"><br>你可以选择下载安装包，但是更推荐使用<code>Windows Store</code>下载。点击后，应该会跳转到<code>Microsoft Store</code>并开始下载，等待即可。安装完成大概是下图这个样子。<br><img src="/figure/kodi/storekodi.png" alt="fig0-2"><br>安装完成即可打开kodi。</p>
+<h2 id="使用-设置和连接ftp服务器"><a href="#使用-设置和连接ftp服务器" class="headerlink" title="使用(设置和连接ftp服务器)"></a>使用(设置和连接ftp服务器)</h2><h3 id="首先更改kodi显示语言"><a href="#首先更改kodi显示语言" class="headerlink" title="首先更改kodi显示语言"></a>首先更改kodi显示语言</h3><ol>
+<li><p>使用方向键或鼠标，选择左上角齿轮状图标进入设置。<br><img src="/figure/kodi/1.png" alt="fig1"></p>
+</li>
+<li><p>选择<code>Interface settings</code>。<br><img src="/figure/kodi/2.png" alt="fig2"></p>
+</li>
+<li><p>在<code>Skin</code> - <code>Fonts</code>里选择为<code>Arial based</code> (按回车确认，下面不再指出)。<br><img src="/figure/kodi/3.png" alt="fig3"><br><img src="/figure/kodi/4.png" alt="fig4"></p>
+</li>
+<li><p>然后在<code>Regional</code> - <code>language</code>里选择Chinese (Simple)。<br><img src="/figure/kodi/5.png" alt="fig5"><br><img src="/figure/kodi/6.png" alt="fig6"></p>
+</li>
+<li><p>等待中文语言包下载完成。</p>
+</li>
+</ol>
+<h3 id="添加FTP视频源"><a href="#添加FTP视频源" class="headerlink" title="添加FTP视频源"></a>添加FTP视频源</h3><ol>
+<li><p>在主界面的<code>视频</code>里选择<code>文件</code>。(主界面显示的项目可以在<code>皮肤设置 (Skin settings)</code>里的<code>主菜单项</code>根据个人喜好设置)<br><img src="/figure/kodi/7.png" alt="fig7"></p>
+</li>
+<li><p>点击<code>添加视频</code>。<br><img src="/figure/kodi/8.png" alt="fig8"></p>
+</li>
+<li><p>在最下方点击<code>添加网络位置</code>。<br><img src="/figure/kodi/9.png" alt="fig9"></p>
+</li>
+<li><p>首先在<code>协议</code>一栏中找到<code>FTP 服务器</code>；<code>地址</code>一栏填写你要连接的FTP服务器地址，比如图中的地址 (仅限校内访问)；<code>远程路径</code>一栏可填FTP服务器上存放视频的目录，也可以不填。填写完成后点右侧<code>确定</code>。<br><img src="/figure/kodi/10.png" alt="fig10"></p>
+</li>
+<li><p>然后你就会发现之前的界面里多出了你刚刚填写的FTP服务器这一项，点开它，并点<code>确定</code>。<br><img src="/figure/kodi/11.png" alt="fig11"><br><img src="/figure/kodi/12.png" alt="fig12"></p>
+</li>
+<li><p>可以给这个FTP视频源取一个名字，方便管理。之后点击<code>确定</code>。<br><img src="/figure/kodi/13.png" alt="fig13"><br><img src="/figure/kodi/14.png" alt="fig14"></p>
+</li>
+<li><p>回到之前主菜单的视频栏，这里已经多出了刚刚添加的FTP视频源，点开它就可以观看FTP服务器中的视频了。<br><img src="/figure/kodi/15.png" alt="fig15"><br><img src="/figure/kodi/16.png" alt="fig16"></p>
+</li>
+</ol>
+<center>~~Author: Yang Xu~~</center>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/kodi/" rel="tag"># kodi</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/23/Intro2Softwares/" rel="next" title="主要学术软件简介">
+                <i class="fa fa-chevron-left"></i> 主要学术软件简介
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/24/SetupBlogWithHexo/" rel="prev" title="搭建GitHub+Hexo博客">
+                搭建GitHub+Hexo博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">itxia</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载与安装"><span class="nav-number">2.</span> <span class="nav-text">下载与安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-设置和连接ftp服务器"><span class="nav-number">3.</span> <span class="nav-text">使用(设置和连接ftp服务器)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首先更改kodi显示语言"><span class="nav-number">3.1.</span> <span class="nav-text">首先更改kodi显示语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加FTP视频源"><span class="nav-number">3.2.</span> <span class="nav-text">添加FTP视频源</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">itxia</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.4.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

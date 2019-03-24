@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="keywords" content="Mathematica">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装Mathematica">
+<meta property="og:url" content="https://itxia.github.io/2018/09/14/InstallMMA/index.html">
+<meta property="og:site_name" content="itxia&#39;s blog">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig0.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig1.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig2.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig3.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig4.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig5.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig6.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig7.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig8.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig9.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig10.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig14.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig15.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig11.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig12.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/fig13.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/mma/faq1.png">
+<meta property="og:updated_time" content="2018-12-24T12:27:41.716Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安装Mathematica">
+<meta name="twitter:image" content="https://itxia.github.io/figure/mma/fig0.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="https://itxia.github.io/2018/09/14/InstallMMA/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>安装Mathematica | itxia's blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">itxia's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Share With You</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://itxia.github.io/2018/09/14/InstallMMA/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="itxia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="itxia's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">安装Mathematica
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-14 10:00:00" itemprop="dateCreated datePublished" datetime="2018-09-14T10:00:00+08:00">2018-09-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-24 20:27:41" itemprop="dateModified" datetime="2018-12-24T20:27:41+08:00">2018-12-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/软件教学系列/" itemprop="url" rel="index"><span itemprop="name">软件教学系列</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!--原来这里不一定必须放一句话才能出现“阅读全文”...-->
+<a id="more"></a>
+<center>~~Author: Chang Ma~~</center>
+
+<h1 id="Mathematica-安装和破解指南"><a href="#Mathematica-安装和破解指南" class="headerlink" title="Mathematica 安装和破解指南"></a>Mathematica 安装和破解指南</h1><p> <strong>本指南仅用于学习交流，在<a href="https://store.wolfram.com/view/app/mathematica/student" target="_blank" rel="noopener">这里</a>可以购买学生版的 Mathematica，学生价只要 50 美元。</strong></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>注：本指南需要最基本的计算机使用知识，如打开<em>指定的</em> 文件夹、复制 &amp; 粘贴、单击下一步等。同时需安装 <a href="https://www.7-zip.org/" target="_blank" rel="noopener">7-Zip</a>、<a href="http://www.winrar.com.cn/" target="_blank" rel="noopener">WinRAR</a>、<a href="https://cn.bandisoft.com/bandizip/" target="_blank" rel="noopener">Bandizip</a> 或 <a href="http://www.peazip.org/" target="_blank" rel="noopener">PeaZip</a> 等解压缩程序中的至少一个并懂得如何使用。本文选用 Mathematica 11.3 的 Windows 版本为示例。一份这样的安装包可以在<a href="https://pan.baidu.com/s/1PHxqt4aSOCb6WREW4CALpQ" target="_blank" rel="noopener">这里</a>找到。各版本所用的破解方式大同小异，请确认自己的安装版本并选择对应的注册机。本指南只适用于 64 位的 Windows 系统，并已经在十余台装有 64 位版本 Windows 10 的计算机上得到了成功验证。<strong>除非安装者知道自己在做什么或者有足够理由，否则不建议改变本文所述的安装破解步骤</strong>。本指南仅用于学习交流，笔者原则上不鼓励使用盗版软件。在科研工作中如果需要使用 Mathematica 也必须购买正版。在<a href="https://store.wolfram.com/view/app/mathematica/student" target="_blank" rel="noopener">这里</a>可以买到学生版的 Mathematica，学生价只要 50 美元。</p>
+<h2 id="下载和解压"><a href="#下载和解压" class="headerlink" title="下载和解压"></a>下载和解压</h2><p>一份文中所用的安装包可以在<a href="https://pan.baidu.com/s/1ir-aUnhO4WodY9iGfi7Ilg" target="_blank" rel="noopener">这里</a>下载。在下载百度网盘文件时推荐使用 <a href="https://github.com/iikira/BaiduPCS-Go" target="_blank" rel="noopener">BaiduPCS-Go</a>、<a href="https://www.pandownload.com/" target="_blank" rel="noopener">PanDownload</a> 或 <a href="https://www.speedpan.com/" target="_blank" rel="noopener">SpeedPan</a> 等第三方百度网盘下载软件或者<a href="https://pan.baidu.com/download" target="_blank" rel="noopener">百度网盘客户端</a>进行下载，而其他版本的安装包可以从<a href="http://zijingbt.njuftp.org/stats.html?id=107907" target="_blank" rel="noopener">紫荆站</a>和<a href="https://www.baidu.com" target="_blank" rel="noopener">百度</a>等网站获取。百度贴吧 mathematica 吧也提供了一份包含了数个 Mathematica 历史版本安装破解方式的<a href="https://tiebamma.github.io/InstallTutorial/" target="_blank" rel="noopener">网页</a>，阅读此网页可以了解更多关于 Mathematica 安装破解的信息。<br>在校园网环境下安装的同学可以选择从校内 FTP 下载安装文件以获得更快的下载速度，请看<a href="/2018/09/17/UseFTP/#FTP%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9D%80">这里</a>。</p>
+<p>下载后，请按自己喜欢的方式解压。请确保解压后的文件夹至少有以下内容：</p>
+<p><img src="/figure/mma/fig0.jpg" alt="fig0"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>打开安装程序 setup.exe 开始安装。在选择<em>允许此应用对系统进行修改</em> 后，会弹出这样的窗口：</p>
+<p><img src="/figure/mma/fig1.jpg" alt="fig1"></p>
+<p>在这个教程中我们使用简体中文作为安装期间所用的语言。点击确定。</p>
+<p><img src="/figure/mma/fig2.jpg" alt="fig2"></p>
+<p>点击下一步。</p>
+<p><img src="/figure/mma/fig3.jpg" alt="fig3"></p>
+<p>点击<em>浏览</em> 并在弹出窗口选择安装目录，或者直接点击下一步。</p>
+<p><img src="/figure/mma/fig4.jpg" alt="fig4"></p>
+<p>点击下一步。</p>
+<p><img src="/figure/mma/fig5.jpg" alt="fig5"></p>
+<p>点击下一步。如果出于种种原因，你不想创建开始菜单文件夹（就是不想在开始菜单里面看到 Mathematica），勾选<em>禁止创建开始菜单文件夹</em>，点击下一步。</p>
+<p><img src="/figure/mma/fig6.jpg" alt="fig6"></p>
+<p>再次确认安装内容和路径，点击安装开始安装。安装过程较长，视硬盘速度从几分钟到十几分钟不等，请耐心等候。</p>
+<p><img src="/figure/mma/fig7.jpg" alt="fig7"></p>
+<p>安装至此完成。</p>
+<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>Mathematica 采用计算破解密钥的方式进行破解。破解需要的工具是注册机和刚刚安装的 Mathematica 软件。文中所用的注册机是一个 html 文件，可以在<a href="https://pan.baidu.com/s/129WG1EGo5jvm4i7N3-PG2A" target="_blank" rel="noopener">这里</a>下载到自己电脑，可以在大部分浏览器上打开、使用；或者，你也可以<a href="/figure/mma/KeyGen_11.3_cn.html"><strong>点这里直接打开</strong></a>。如果你电脑的浏览器因某些原因关闭了 JavaScript 支持，请改用手机浏览器、下载新的浏览器或重新开启 JavaScript 支持。</p>
+<p>安装后直接打开 Mathematica，会启动激活程序：</p>
+<p><img src="/figure/mma/fig8.jpg" alt="fig8"></p>
+<p>点击<em>其他方式激活</em>。</p>
+<p><img src="/figure/mma/fig9.jpg" alt="fig9"></p>
+<p>选择<em>手动激活</em>。</p>
+<p><img src="/figure/mma/fig10.jpg" alt="fig10"></p>
+<p>在这个页面中会显示 Math ID，不同的电脑有不同的 Math ID，这台电脑的 Math ID 就是图中的 <code>6239-87383-24330</code> 。注意，横杠 “-” 是 Math ID 的一部分，在输入时务必添加。</p>
+<p>打开你的注册机，html 版本的注册机应该有如图所示的界面：</p>
+<p><img src="/figure/mma/fig14.jpg" alt="fig14"></p>
+<p>在左边的输入框中输入你的 Math ID，右边的输入框输入任意的激活密钥，要求是 <code>xxxx-xxxx-xxxxxx</code> 格式。<code>1111-1111-111111</code> 就是一个不错的密钥，而安装过其他版本 Mathematica 的人在看到 <code>1234-4321-123456</code>  时八成会会心一笑。输入之后，点击生成。</p>
+<p><img src="/figure/mma/fig15.jpg" alt="fig15"></p>
+<p>复制生成的密码，和密钥一同填入 Wolfram 产品激活窗口，点击激活。</p>
+<p><img src="/figure/mma/fig11.jpg" alt="fig11"></p>
+<p>勾选<em>我接受该协议的条款</em>，点击确定。</p>
+<p><img src="/figure/mma/fig12.jpg" alt="fig12"></p>
+<p>如果你想注册一个 Wolfram 账号，点击<em>立即注册</em>，不然点击<em>不再询问</em>。</p>
+<p><img src="/figure/mma/fig13.jpg" alt="fig13"></p>
+<p>至此，破解完毕。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>Q：安装好后打开激活时出现下图所示的情况，且关不掉怎么办？<br><img src="/figure/mma/faq1.png" alt="faq1"></p>
+<p>A：重启MMA(和/或)电脑。</p>
+<p>Q：Mathematica 是什么？能干什么？</p>
+<p>A：Mathematica 是一种易学易用、优雅美观、高效全能的科学计算软件，同时也是 Wolfram 语言的解释器和 IDE。用 Mathematica 可以干很多事，从符号求导求积到制作词云、绘制统计地图再到查阅社会科学与天文学资料、玩康威生命游戏（game of life，是一种二维炼蛊小游戏）、做一些风格特殊的音乐。其中的一些可以在<a href="https://www.zhihu.com/question/27834147" target="_blank" rel="noopener">这里</a>找到。</p>
+<p>Q：32 位系统能装吗？</p>
+<p>A：只要是 Windows 7 以上都可以。请参阅 Mathematica 的<a href="https://www.wolfram.com/mathematica/system-requirements.zh.html" target="_blank" rel="noopener">系统需求</a>。</p>
+<p>Q：Linux 系统该如何安装？</p>
+<p>A：<a href="https://pan.baidu.com/s/1d5gCSDOIIYcUWaKi_MksVw" target="_blank" rel="noopener">这里</a>是一份 Linux 版 Mathematica 的安装包（FTP1里也有），运行即可安装。Mathematica 的注册机是通用的，这意味着你可以在 Linux 系统中应用文中的注册机。一些发行版可能会遇到缺少字体库的问题，在谷歌就可以找到解决方案。</p>
+<p>Q：Mathematica 该怎么学？</p>
+<p>A：Mathematica 带有丰富而详尽的文档。这是学习 Mathematica 的第一推荐。入门的话欢迎参加匡院学术部和开物社举办的软件学习讲座，你可以加入群聊 <code>674580668</code> 以了解详情。讲座每年都会举办，其中一场会讲解 Mathematica 的入门知识并提供进一步学习的指导。</p>
+<center>~~Editor: Yang Xu~~</center>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mathematica/" rel="tag"># Mathematica</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/12/ConfigST3/" rel="next" title="配置Sublime Text 3">
+                <i class="fa fa-chevron-left"></i> 配置Sublime Text 3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/17/UseFTP/" rel="prev" title="FTP使用教程(及其它零碎问题解答?)">
+                FTP使用教程(及其它零碎问题解答?) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">itxia</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mathematica-安装和破解指南"><span class="nav-number">1.</span> <span class="nav-text">Mathematica 安装和破解指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载和解压"><span class="nav-number">1.2.</span> <span class="nav-text">下载和解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#破解"><span class="nav-number">1.4.</span> <span class="nav-text">破解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">1.5.</span> <span class="nav-text">常见问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">itxia</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.4.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

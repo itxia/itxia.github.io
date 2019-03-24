@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="整个安装、测试过程约花费30~60分钟，请合理安排时间。">
+<meta name="keywords" content="Matlab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装Matlab R2018a">
+<meta property="og:url" content="https://itxia.github.io/2018/09/10/InstallMatlab/index.html">
+<meta property="og:site_name" content="itxia&#39;s blog">
+<meta property="og:description" content="整个安装、测试过程约花费30~60分钟，请合理安排时间。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig1.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig2.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig3.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig4.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig5.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig6.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig7.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig8.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig9.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig10.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig11.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig12.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig13.jpg">
+<meta property="og:image" content="https://itxia.github.io/figure/matlab/fig14.png">
+<meta property="og:updated_time" content="2018-12-24T12:27:41.723Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安装Matlab R2018a">
+<meta name="twitter:description" content="整个安装、测试过程约花费30~60分钟，请合理安排时间。">
+<meta name="twitter:image" content="https://itxia.github.io/figure/matlab/fig1.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="https://itxia.github.io/2018/09/10/InstallMatlab/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>安装Matlab R2018a | itxia's blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">itxia's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Share With You</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://itxia.github.io/2018/09/10/InstallMatlab/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="itxia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="itxia's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">安装Matlab R2018a
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-10 08:00:00" itemprop="dateCreated datePublished" datetime="2018-09-10T08:00:00+08:00">2018-09-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-24 20:27:41" itemprop="dateModified" datetime="2018-12-24T20:27:41+08:00">2018-12-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/软件教学系列/" itemprop="url" rel="index"><span itemprop="name">软件教学系列</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>整个安装、测试过程约花费30~60分钟，请合理安排时间。</p>
+<a id="more"></a>
+<center>~~Author: Chang Ma~~</center>
+
+<h1 id="MathWoks-MATLAB-amp-Simulink-安装指南"><a href="#MathWoks-MATLAB-amp-Simulink-安装指南" class="headerlink" title="MathWoks MATLAB &amp; Simulink 安装指南"></a>MathWoks MATLAB &amp; Simulink 安装指南</h1><p><strong>本指南仅用于学习交流，在<a href="https://ww2.mathworks.cn/store" target="_blank" rel="noopener">这里</a>可以购买正版的 MATLAB。</strong></p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本指南需要最基本的计算机使用知识，如打开指定的文件夹、复制 &amp; 粘贴、单击下一步等。同时需安装 <a href="https://www.7-zip.org/" target="_blank" rel="noopener">7-Zip</a>、<a href="http://www.winrar.com.cn/" target="_blank" rel="noopener">WinRAR</a>、<a href="https://cn.bandisoft.com/bandizip/" target="_blank" rel="noopener">Bandizip</a> 或 <a href="http://www.peazip.org/" target="_blank" rel="noopener">PeaZip</a> 等解压缩程序中的至少一个并懂得如何使用。本文选用 MATLAB R2018a 的 Windows 版本为示例。其他版本 MATLAB 的安装方式与此版本相似，可以参考安装包所附的 Readme 文档和本指南进行安装和破解。本指南只适用于 64 位的 Windows 系统，并已经在数十台装有 64 位版本 Windows 10 的计算机上得到了成功验证。<strong>除非安装者知道自己在做什么或者有足够理由，否则不建议改变本文所述的安装破解步骤</strong>。本指南仅用于学习交流，笔者原则上不鼓励使用盗版软件。在科研工作中如果需要使用 MATLAB 也必须购买正版。在<a href="https://ww2.mathworks.cn/store" target="_blank" rel="noopener">这里</a>可以买到正版的 MATLAB。</p>
+<h2 id="下载和解压"><a href="#下载和解压" class="headerlink" title="下载和解压"></a>下载和解压</h2><p>一份安装包可以在<a href="https://pan.baidu.com/s/1zRLrmkt3sp3ikqfCCtnX3w" target="_blank" rel="noopener">这里</a>下载，其他版本的安装包可以从<a href="http://zijingbt.njuftp.org/stats.html?id=106787" target="_blank" rel="noopener">紫荆站</a>、<a href="https://www.52pojie.cn/thread-713048-1-1.html" target="_blank" rel="noopener">52 破解</a>和<a href="https://www.baidu.com" target="_blank" rel="noopener">百度</a>等网站获取。在下载百度网盘中文件时推荐使用 <a href="https://github.com/iikira/BaiduPCS-Go" target="_blank" rel="noopener">BaiduPCS-Go</a>、<a href="https://www.pandownload.com/" target="_blank" rel="noopener">PanDownload</a> 或 <a href="https://www.speedpan.com/" target="_blank" rel="noopener">SpeedPan</a> 等第三方百度网盘下载软件或者<a href="https://pan.baidu.com/download" target="_blank" rel="noopener">百度网盘客户端</a>进行下载。<br>在校园网环境下安装的同学可以选择从<strong>校内 FTP </strong>下载安装文件以获得更快的下载速度，请看<a href="/2018/09/17/UseFTP/#FTP%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9D%80">这里</a>。</p>
+<p>下载后，<strong>请将 R2018a_win64_dvd1.iso 和 R2018a_win64_dvd2.iso 进行解压，并将内容拷贝至同一文件夹中</strong>。不少安装教程中推荐使用虚拟光驱软件进行挂载，但是虚拟光驱的使用较为麻烦，且经常出错。拷贝后的结果如下图所示：</p>
+<!-- 编者注：``Windows 10``可以直接双击挂载iso文件。如果不想解压占用过多硬盘空间，可以双击``dvd1.iso``点击``setup.exe``安装，到提示弹出dvd1插入dvd2时，弹出``dvd1.iso``，双击``dvd2.iso``挂载后，继续安装。需要确保``dvd1.iso``和``dvd2.iso``挂载时的盘符是一样的。关于挂载和弹出，可以参考TeXLive安装教程。如果不会挂载和弹出或是觉得可能搞不定，就按照作者的方法吧。-->
+<p><img src="/figure/matlab/fig1.jpg" alt="fig1"></p>
+<p><strong>请确保 dvd1 和 dvd2 两个文件位于同一文件夹中。</strong>别忘了解压 MATLAB R2018a Win64 Crack.zip。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>打开 setup.exe，在选择<em>允许此应用对系统进行修改</em> 后，会弹出以下窗口：</p>
+<p><img src="/figure/matlab/fig2.jpg" alt="Fig2"></p>
+<p>选择<em>使用文件安装密钥</em>，点击下一步；</p>
+<p><img src="/figure/matlab/fig3.jpg" alt="fig3"></p>
+<p>选择<em>是</em>，点击下一步；</p>
+<p><img src="/figure/matlab/fig4.jpg" alt="fig4"></p>
+<p>选择<em>我已有我的许可证文件安装密钥</em>，在输入框中输入 <code>09806-07443-53955-64350-21751-41297</code> （如果你在安装其他版本，你往往可以在破解包中的 readme.txt 中找到对应版本的安装密钥），点击下一步；</p>
+<p><img src="/figure/matlab/fig5.jpg" alt="fig5"></p>
+<p>点击<em>浏览</em> 并在弹出窗口中选择安装目录，或直接点击下一步；</p>
+<p><img src="/figure/matlab/fig6.jpg" alt="fig6"></p>
+<p>选择要安装的组件。请确保你所需要的组件已被勾选，或者保险起见，勾选全部组件。点击下一步。</p>
+<p><img src="/figure/matlab/fig7.jpg" alt="fig7"></p>
+<p>最后一次对要安装的部分进行确认。点击<em>安装</em> 开始安装。</p>
+<p><img src="/figure/matlab/fig8.jpg" alt="fig8"></p>
+<p>请等待直到安装完成。这一过程可能会持续 10 分钟或者更久，视硬盘读写速度和安装组件大小而定。若过程中弹出显示着<em>弹出 dvd1 并插入 dvd2</em> 的窗口，请检查自己之前是否按照描述的步骤操作，并自行解决问题。</p>
+<p>出现这样的窗口后，点击下一步。</p>
+<p><img src="/figure/matlab/fig9.jpg" alt="fig9"></p>
+<p>至此，安装结束。</p>
+<p><img src="/figure/matlab/fig10.jpg" alt="fig10"></p>
+<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>安装完毕后，可以开始破解步骤。</p>
+<p>找到 MATLAB 的启动程序 matlab.exe（一般在安装目录的 bin 文件夹下）并打开，在选择<em>允许此应用对系统进行修改</em> 后，会弹出以下窗口：</p>
+<p><img src="/figure/matlab/fig11.jpg" alt="fig11"></p>
+<p>选择<em>在不使用 Internet 的情况下手动激活</em>，点击下一步；</p>
+<p><img src="/figure/matlab/fig12.jpg" alt="fig12"></p>
+<p>选择<em>输入许可证文件的完整路径 (包括文件名)</em>，点击浏览，找到 MATLAB R2018a Win64 Crack 文件夹下的 license_standalone.lic，点击下一步，激活完成。</p>
+<p>在激活后，将 MATLAB R2018a Win64 Crack 文件夹下的 bin 文件夹复制到安装路径，并覆盖安装路径下的 bin 文件夹，即可完成破解。之后，打开安装路径下 bin 文件夹中的 matlab.exe，即可开始使用 MATLAB。</p>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>Q：出现以下报错怎么办？(Error -8)</p>
+<p><img src="/figure/matlab/fig13.jpg" alt="fig13"></p>
+<p>A：执行破解的最后一步，即 “将 MATLAB R2018a Win64 Crack 文件夹下的 bin 文件夹复制到安装路径，并覆盖安装路径下的 bin 文件夹”。</p>
+<p>Q：出现以下报错怎么办？(Error -95)</p>
+<p><img src="/figure/matlab/fig14.png" alt="fig14"></p>
+<p>A：此 bug 原因尚不明确，复现次数较少。如果出现，请按以下步骤进行。如果在某步尝试中成功打开了 MATLAB 的界面，说明破解完成，之后也不会出现这一报错。</p>
+<ul>
+<li>删除 安装目录<code>\bin\win64\netapi32.dll</code>，管理员身份运行同目录下<code>activate_matlab.exe</code>，之后试着打开<code>matlab.exe</code>；</li>
+<li>重新将<code>MATLAB R2018a Win64 Crack</code>文件夹下的<code>bin</code>文件夹复制到安装路径，并覆盖安装路径下的 bin 文件夹，此后将<code>license_standalone.lic</code>复制到 安装目录<code>\lincenses</code>文件夹下，之后试着打开<code>matlab.exe</code>；将 安装目录<code>\lincenses</code>文件夹下<code>license_standalone.lic</code>改名为<code>license_&lt;你的设备名称&gt;_968398_R2018a.lic</code>，你的设备名称可以在 <code>计算机</code> - <code>系统属性</code> 下查看，之后试着打开<code>matlab.exe</code>；</li>
+<li>卸载 MATLAB，删除 MATLAB 安装目录，重新安装。</li>
+</ul>
+<p>Q：出现 “请弹出 dvd1 并插入 dvd2” 的窗口，我弹出了 dvd1，也挂载了 dvd2，也没用，怎么办？</p>
+<p>A：玄学问题。请取消安装，按照本文方法（解压光盘映像文件）重新安装。</p>
+<p>Q：我是 32 位系统。</p>
+<p>A：MATLAB 早已停止了对 32 位系统的支持。如果实在是换不了 64 位系统，去安装 MATLAB R2015a 吧，那个有 32 位版本的。</p>
+<p>Q：Linux 系统怎么安装？</p>
+<p>A：既然选择了 Linux 系统，就要有折腾 Linux 系统的觉悟。在<a href="https://pan.baidu.com/s/1YmTuh7fD0XttDPCRxV1PGg" target="_blank" rel="noopener">这里</a>可以找到一份 Linux 系统下 MATLAB 的安装包，你可以自己摸索着安装（安装过程是类似的，也可以在网上找到教程）。安装之后 Matlab 2018a Linux64 Crack.tar.gz 文件中有破解相关的说明。不要高兴的太早，很多 Linux 系统的发行版都会出现库问题和 jre 字体问题，这些都可以在谷歌得到解决。我的 Manjaro 格式化之前装了一份 MATLAB，但是被我格了。不然我就截图晒你一脸了。</p>
+<p>Q：Mac OS 怎么安装？</p>
+<p>A：我手（mai）头（bu）没（qi）有 Mac 电脑，欢迎 Mac 用（you）户（qian）增（ren）补（song）本（wo）指（yi）南（tai）。</p>
+<p>Q：我装完了。但我一点都不会用。</p>
+<p>A：你可以在命令行窗口（就是打开 MATLAB 最中间的那个）随便输点什么体验体验，比如 2*5 之类的。如果时间允许，欢迎参加匡院学术部和开物社举办的软件学习讲座，加这个群 <code>674580668</code> 可以了解详情。MATLAB 的帮助文档很丰富，如果有什么不清楚可以直接查阅。各种 MATLAB 书籍（我推荐郑智波翻译，David McMahon 编著的《MATLAB 揭秘》和谢中华的《MATLAB 从零到进阶》）和网上教程也是不错的选择。</p>
+<hr>
+<center>~~Editor: Yang Xu~~</center>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Matlab/" rel="tag"># Matlab</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/09/InstallTeXLive/" rel="next" title="安装TeXLive">
+                <i class="fa fa-chevron-left"></i> 安装TeXLive
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/10/ConfigVSCode/" rel="prev" title="配置VSCode">
+                配置VSCode <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">itxia</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MathWoks-MATLAB-amp-Simulink-安装指南"><span class="nav-number">1.</span> <span class="nav-text">MathWoks MATLAB &amp; Simulink 安装指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载和解压"><span class="nav-number">1.2.</span> <span class="nav-text">下载和解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#破解"><span class="nav-number">1.4.</span> <span class="nav-text">破解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">1.5.</span> <span class="nav-text">常见问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">itxia</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.4.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

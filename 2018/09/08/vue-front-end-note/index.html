@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="本文迁移自nju-itxia的技术博客，原文链接">
+<meta name="keywords" content="项目文档">
+<meta property="og:type" content="article">
+<meta property="og:title" content="预约系统前端方案">
+<meta property="og:url" content="https://itxia.github.io/2018/09/08/vue-front-end-note/index.html">
+<meta property="og:site_name" content="itxia&#39;s blog">
+<meta property="og:description" content="本文迁移自nju-itxia的技术博客，原文链接">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-24T12:27:41.771Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="预约系统前端方案">
+<meta name="twitter:description" content="本文迁移自nju-itxia的技术博客，原文链接">
+
+
+
+
+
+
+  <link rel="canonical" href="https://itxia.github.io/2018/09/08/vue-front-end-note/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>预约系统前端方案 | itxia's blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">itxia's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Share With You</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://itxia.github.io/2018/09/08/vue-front-end-note/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="itxia">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="itxia's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">预约系统前端方案
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-08 13:08:53" itemprop="dateCreated datePublished" datetime="2018-09-08T13:08:53+08:00">2018-09-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-12-24 20:27:41" itemprop="dateModified" datetime="2018-12-24T20:27:41+08:00">2018-12-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/NJU-ITXIA-WEB-GROUP/" itemprop="url" rel="index"><span itemprop="name">NJU-ITXIA WEB GROUP</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>本文迁移自nju-itxia的技术博客，<a href="https://nju-itxia.github.io/techblog/2018/09/08/vue-front-end-note/" target="_blank" rel="noopener">原文链接</a></p>
+</blockquote>
+<a id="more"></a>
+<h1 id="itxia前端方案"><a href="#itxia前端方案" class="headerlink" title="itxia前端方案"></a>itxia前端方案</h1><blockquote>
+<p>整理自 刘洋@liuyang0717:/itxia前端方案(<a href="https://zybuluo.com/liuyang0717/note/1276062" target="_blank" rel="noopener">https://zybuluo.com/liuyang0717/note/1276062</a>)</p>
+</blockquote>
+<h2 id="技术选型-整体"><a href="#技术选型-整体" class="headerlink" title="技术选型(整体)"></a>技术选型(整体)</h2><p>使用MVVM模式，选用vue这一MVVM框架，webpack为打包工具，nginx为代理服务器<br>参考开源项目:<a href="https://github.com/faisaltheparttimecoder/bulma-vuejs-demo-website" target="_blank" rel="noopener">https://github.com/faisaltheparttimecoder/bulma-vuejs-demo-website</a><br>(有两个.vue文件写成.Vue了会导致报错, 改了就可以了，不行的话，就把模块导入改为全名不省略.vue后缀)</p>
+<h2 id="分工"><a href="#分工" class="headerlink" title="分工"></a>分工</h2><ul>
+<li>视觉和样式设计(maorx,粥粥)</li>
+<li>模块化/组件化开发(tipwheal/liuyang0717/天行/常卓)</li>
+<li>整合测试(tipwheal/liuayang0717)</li>
+</ul>
+<h2 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h2><table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>任务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一阶段</td>
+<td>样式设计/CSS</td>
+</tr>
+<tr>
+<td>第二阶段</td>
+<td>框架选型/构建脚手架</td>
+</tr>
+<tr>
+<td>第三阶段</td>
+<td>模块化/组件化开发</td>
+</tr>
+<tr>
+<td>第三阶段</td>
+<td>整合/测试</td>
+</tr>
+</tbody>
+</table>
+<h3 id="样式设计"><a href="#样式设计" class="headerlink" title="样式设计"></a>样式设计</h3><p>我们要做静态页面，用html+CSS来做，考虑响应式布局，尽可能快速布局，因为我们需要讨论然后修改</p>
+<h2 id="一些说明"><a href="#一些说明" class="headerlink" title="一些说明"></a>一些说明</h2><blockquote>
+<p>待整理</p>
+</blockquote>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p>前后端分离 <a href="https://www.cnblogs.com/zhouyangla/p/7259906.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhouyangla/p/7259906.html</a><br>一份django开发教程 <a href="https://legacy.gitbook.com/book/andrew-liu/django-blog/details" target="_blank" rel="noopener">https://legacy.gitbook.com/book/andrew-liu/django-blog/details</a><br>前后端分离 <a href="https://blog.csdn.net/justloveyou_/article/details/74379479" target="_blank" rel="noopener">https://blog.csdn.net/justloveyou_/article/details/74379479</a><br>RESTful <a href="https://www.runoob.com/w3cnote/restful-architecture.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/restful-architecture.html</a><br>不同类型数据的POST <a href="https://blog.csdn.net/xiaoliuliu2050/article/details/52875881" target="_blank" rel="noopener">https://blog.csdn.net/xiaoliuliu2050/article/details/52875881</a><br>模块化方法 <a href="https://blog.csdn.net/Real_Bird/article/details/54869066" target="_blank" rel="noopener">https://blog.csdn.net/Real_Bird/article/details/54869066</a><br>前端的设计模式 <a href="https://www.cnblogs.com/zhouyangla/p/6936455.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhouyangla/p/6936455.html</a><br>还是前端的设计模式 <a href="https://www.cnblogs.com/iovec/p/7840228.html" target="_blank" rel="noopener">https://www.cnblogs.com/iovec/p/7840228.html</a><br>DOM <a href="https://blog.csdn.net/shi199434/article/details/78947762" target="_blank" rel="noopener">https://blog.csdn.net/shi199434/article/details/78947762</a></p>
+<h2 id="一份AJAX请求的样例"><a href="#一份AJAX请求的样例" class="headerlink" title="一份AJAX请求的样例"></a>一份AJAX请求的样例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> jsonData = &#123;</span><br><span class="line">            <span class="string">"name"</span>:$(<span class="string">"#name"</span>).val(),</span><br><span class="line">            <span class="string">"email"</span>:$(<span class="string">"#email"</span>).val(),</span><br><span class="line">            <span class="string">"campus"</span>:$(<span class="string">"#campus"</span>).val(),</span><br><span class="line">            <span class="string">"deviceVersion"</span>:$(<span class="string">"#deviceVersion"</span>).val(),</span><br><span class="line">            <span class="string">"systemVersion"</span>:$(<span class="string">"#systemVersion"</span>).val(),</span><br><span class="line">            <span class="string">"description"</span>:$(<span class="string">"#description"</span>).val(),</span><br><span class="line">            <span class="string">"file"</span>:$(<span class="string">"#file"</span>).val()</span><br><span class="line">    &#125;;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">            type: <span class="string">"POST"</span>,</span><br><span class="line">            url: <span class="string">"http://127.0.0.1:3000/customer/appointment"</span>,</span><br><span class="line">            contentType: <span class="string">"application/json"</span>,</span><br><span class="line">            data: <span class="built_in">JSON</span>.stringify(jsonData),</span><br><span class="line">            dataType: <span class="string">"text"</span>,</span><br><span class="line">            xhrFields: &#123;</span><br><span class="line">                    withCredentials: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            success: <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">                    $(<span class="string">"#msg"</span>).text(msg);</span><br><span class="line">            &#125;,</span><br><span class="line">            error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    $(<span class="string">"#msg"</span>).text(<span class="string">"error"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/项目文档/" rel="tag"># 项目文档</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/08/HowToBook/" rel="next" title="如何使用IT侠预约系统">
+                <i class="fa fa-chevron-left"></i> 如何使用IT侠预约系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/08/HowToUseGit/" rel="prev" title="如何使用Git和GitHub">
+                如何使用Git和GitHub <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">itxia</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#itxia前端方案"><span class="nav-number">1.</span> <span class="nav-text">itxia前端方案</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#技术选型-整体"><span class="nav-number">1.1.</span> <span class="nav-text">技术选型(整体)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分工"><span class="nav-number">1.2.</span> <span class="nav-text">分工</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发流程"><span class="nav-number">1.3.</span> <span class="nav-text">开发流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#样式设计"><span class="nav-number">1.3.1.</span> <span class="nav-text">样式设计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些说明"><span class="nav-number">1.4.</span> <span class="nav-text">一些说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">1.5.</span> <span class="nav-text">参考链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一份AJAX请求的样例"><span class="nav-number">1.6.</span> <span class="nav-text">一份AJAX请求的样例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">itxia</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.4.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
