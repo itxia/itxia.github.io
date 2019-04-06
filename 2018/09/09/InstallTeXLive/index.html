@@ -118,7 +118,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://itxia.github.io/figure/TeX/tuna_TeXLive.png">
 <meta property="og:image" content="https://itxia.github.io/figure/TeX/mount_TeXLive.png">
-<meta property="og:updated_time" content="2018-12-24T12:27:41.730Z">
+<meta property="og:updated_time" content="2019-04-06T12:14:00.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安装TeXLive">
 <meta name="twitter:description" content="整个安装、测试过程约花费1小时，请合理安排时间。">
@@ -372,7 +372,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-24 20:27:41" itemprop="dateModified" datetime="2018-12-24T20:27:41+08:00">2018-12-24</time>
+                <time title="修改时间：2019-04-06 20:14:00" itemprop="dateModified" datetime="2019-04-06T20:14:00+08:00">2019-04-06</time>
               
             
           </span>
@@ -460,10 +460,19 @@
 <p>然后，在<code>test.tex</code>所在文件夹的空白处，<code>按住Shift</code>+<code>鼠标右键</code>，选择<code>在此处打开PowerShell窗口(Open PowerShell window here)</code>，输入<code>xelatex test.tex</code>并回车。运行完成后，若文件夹内出现<code>test.pdf</code>且用sumatra打开查看没问题，则说明TeXLive安装和配置均已成功！</p>
 <p>在<a href="/2018/09/10/ConfigVSCode/">另一篇文章</a>中会介绍配合<code>VScode</code>和<code>SumatraPDF</code>写LaTeX文档的方法。</p>
 <h2 id="附录-Appendix"><a href="#附录-Appendix" class="headerlink" title="附录(Appendix)"></a>附录(Appendix)</h2><ol>
-<li><p><strong>定义函数</strong> <code>添加 ... 到 Path(Add ... to Path)</code> ：<br> (1) <code>右键此电脑(This PC)</code> - <code>属性(Properties)</code> - <code>高级系统设置(Advanced System Settings)</code> - <code>环境变量(Environment Variables)</code>。<br>(2) 选中<code>系统变量(System variables)</code>中的<code>Path</code>，点击<code>编辑(Edit)</code><br>(3) 点击<code>浏览(Browse)</code>，找到<code>...</code>并选中它，点击<code>确定(OK)</code>。<br>(4) 逐层点击<code>确定(OK)</code>返回。</p>
+<li><p><strong>定义函数</strong> <code>添加 ... 到 Path(Add ... to Path)</code> ：<br>(1) <code>右键此电脑(This PC)</code> - <code>属性(Properties)</code> - <code>高级系统设置(Advanced System Settings)</code> - <code>环境变量(Environment Variables)</code>。<br>(2) 选中<code>系统变量(System variables)</code>中的<code>Path</code>，点击<code>编辑(Edit)</code><br>(3) 点击<code>浏览(Browse)</code>，找到<code>...</code>并选中它，点击<code>确定(OK)</code>。<br>(4) 逐层点击<code>确定(OK)</code>返回。</p>
 </li>
 <li><p><strong>更新TeXLive</strong> (建议做)<br>引自<a href="https://mirror.tuna.tsinghua.edu.cn/help/CTAN/" target="_blank" rel="noopener">这里</a>。<br>打开命令行(按<code>Windows + R</code>，输入cmd并回车)，逐行执行以下命令即可。如果提示权限问题，使用管理员权限运行命令行。(但是我的电脑上不需要管理员权限)</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet</span><br><span class="line">tlmgr update --self</span><br><span class="line">tlmgr update --all</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>FAQ</p>
+<ol>
+<li>报错(最后是<code>Goodbye</code>，开头有<code>spawn: cmd</code>)<ul>
+<li>原因：CTeX卸载不完全导致的</li>
+<li>解决：在环境变量里添加<code>C:\Windows\System32</code></li>
+</ul>
+</li>
+</ol>
 </li>
 </ol>
 <hr>
