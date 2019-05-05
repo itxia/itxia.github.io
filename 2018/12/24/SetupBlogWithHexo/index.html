@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="itxia&#39;s blog">
 <meta property="og:description" content="把搭建本博客的过程和坑记录一下，方便以后维护。也可以用于搭建自己的博客。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-09T04:49:50.298Z">
+<meta property="og:updated_time" content="2019-05-05T02:46:10.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建GitHub+Hexo博客">
 <meta name="twitter:description" content="把搭建本博客的过程和坑记录一下，方便以后维护。也可以用于搭建自己的博客。">
@@ -373,7 +373,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-09 12:49:50" itemprop="dateModified" datetime="2019-01-09T12:49:50+08:00">2019-01-09</time>
+                <time title="修改时间：2019-05-05 10:46:10" itemprop="dateModified" datetime="2019-05-05T10:46:10+08:00">2019-05-05</time>
               
             
           </span>
@@ -434,16 +434,14 @@
         <p>把搭建本博客的过程和坑记录一下，方便以后维护。也可以用于搭建自己的博客。</p>
 <a id="more"></a>
 <p>注：想要搭建自己的博客的，请看详细版。简略版主要是用于快速搭建此博客，自己的博客还是全新搭建比较好。</p>
-<h2 id="简略版"><a href="#简略版" class="headerlink" title="简略版"></a>简略版</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
-<li>安装<code>Git</code>、<code>node</code>、<code>Hexo</code>。<br>以下命令仅作示例（Ubuntu 18.04）：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git nodejs</span><br><span class="line">node -V</span><br><span class="line">npm -V</span><br><span class="line">sudo npm install -g hexo</span><br><span class="line">hexo -V</span><br></pre></td></tr></table></figure>
+<h2 id="简略版-快速搭建此itxia博客"><a href="#简略版-快速搭建此itxia博客" class="headerlink" title="简略版(快速搭建此itxia博客)"></a>简略版(快速搭建此itxia博客)</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<li><p>安装<code>Git</code>、<code>node (npm)</code>、<code>Hexo</code>。<br>以下命令仅作示例（Ubuntu 18.04）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git nodejs</span><br><span class="line"><span class="meta">#</span> Maybe you need to install 'npm' separately</span><br><span class="line"><span class="meta">#</span> Strongly recommened in China:</span><br><span class="line"><span class="meta">#</span> sudo npm config set registry https://registry.npm.taobao.org</span><br><span class="line">sudo npm install --unsafe-perm --verbose -g hexo-cli</span><br><span class="line"><span class="meta">#</span> to verify installation</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<!--Linux/MacOS用户就不用说了，有方便的命令行方式；Windows用户可以去对应的官网下载安装包，或者使用scoop/chocolatey这样的包管理器。-->
-<ol>
-<li><code>git clone</code>blog这个repo。(如果是搭建自己的博客，可以先fork再clone。)</li>
-<li><code>cd blog/HEXO</code></li>
-<li><code>npm ls --depth 0</code>，会提示缺少一大堆东西，用<code>npm install --save xxx</code>安装完成；不过似乎只要安装 <code>install.sh</code> 里的东西就够了，如果你的网速很快也可以一个个慢慢装。</li>
-<li>(如果是搭建自己的博客，需要配置一下<code>/_config.yml</code>文件，从上往下依次包括<code>Site</code>、<code>URL</code>、<code>theme</code>、<code>Deployment</code>。应该不难理解，如果不懂可以看下面详细版的两篇文章。)</li>
+<li><p>克隆该博客仓库及hexo相关操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:itxia/blog.git</span><br><span class="line">cd blog/HEXO</span><br><span class="line"><span class="meta">#</span> Ensure 'package.json' exists in this directory before doing the next</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<!-- 1. `` npm ls --depth 0 ``，会提示缺少一大堆东西，用`` npm install --save xxx ``安装完成；不过似乎只要安装`` install.sh ``里的东西就够了，如果你的网速很快也可以一个个慢慢装。-->
+</li>
 </ol>
 <h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>博客文章存放于<code>/source/_post/</code>里面。(如果是要写自己的博客，你可以删掉里面的<code>.md</code>文件。)</p>
 <ol>
@@ -454,7 +452,17 @@
 <li>提交到GitHub。本地预览完毕，没有错误，可以提交。<code>hexo deploy</code>。</li>
 </ol>
 <p>注：以上的几个hexo命令可以简写为首字母，如<code>hexo n test</code>、<code>hexo g</code>、<code>hexo s --debug</code>、<code>hexo d</code>。如果你对修改很有信心不要预览直接提交，可以<code>hexo d -g</code>。</p>
-<h2 id="详细版"><a href="#详细版" class="headerlink" title="详细版"></a>详细版</h2><p>请查看<a href="https://www.jianshu.com/p/465830080ea9" target="_blank" rel="noopener">简书文章1(总体搭建)</a>、<a href="https://www.jianshu.com/p/5d5931289c09" target="_blank" rel="noopener">简书文章2(关于NexT主题)</a>，然后再看上面的简略版。</p>
+<h2 id="详细版-用于一般性的搭建"><a href="#详细版-用于一般性的搭建" class="headerlink" title="详细版(用于一般性的搭建)"></a>详细版(用于一般性的搭建)</h2><p>请查看<a href="https://www.jianshu.com/p/465830080ea9" target="_blank" rel="noopener">简书文章1(总体搭建)</a>、<a href="https://www.jianshu.com/p/5d5931289c09" target="_blank" rel="noopener">简书文章2(关于NexT主题)</a>，然后再看上面的简略版。<br>这里给出一个步骤：</p>
+<ol>
+<li><p>安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git nodejs</span><br><span class="line"><span class="meta">#</span> Maybe you need to install 'npm' separately</span><br><span class="line"><span class="meta">#</span> Strongly recommened in China:</span><br><span class="line"><span class="meta">#</span> sudo npm config set registry https://registry.npm.taobao.org</span><br><span class="line">sudo npm install --unsafe-perm --verbose -g hexo-cli</span><br><span class="line"><span class="meta">#</span> to verify installation</span><br><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>hexo初始化及安装必要的包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd &lt;your_blog_dir&gt;</span><br><span class="line">hexo init</span><br><span class="line"><span class="meta">#</span> Ensure 'package.json' exists in this directory before doing the next</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>搭建自己的博客，需要配置一下<code>/_config.yml</code>文件，从上往下依次包括<code>Site</code>、<code>URL</code>、<code>theme</code>、<code>Deployment</code>。应该不难理解，如果不懂可以看上述两篇文章。</p>
+</li>
+</ol>
 
       
     </div>
@@ -497,6 +505,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/05/UbuntuByYTR/" rel="prev" title="ubuntu复活记(ubuntu 配置记录)">
+                ubuntu复活记(ubuntu 配置记录) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -566,7 +578,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -666,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简略版"><span class="nav-number">1.</span> <span class="nav-text">简略版</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">1.2.</span> <span class="nav-text">用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细版"><span class="nav-number">2.</span> <span class="nav-text">详细版</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简略版-快速搭建此itxia博客"><span class="nav-number">1.</span> <span class="nav-text">简略版(快速搭建此itxia博客)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">1.2.</span> <span class="nav-text">用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#详细版-用于一般性的搭建"><span class="nav-number">2.</span> <span class="nav-text">详细版(用于一般性的搭建)</span></a></li></ol></div>
             
 
           </div>
